@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/21e9ec05b8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+        <nav>
+            <img src="" class="">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#strength">Strength</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header">
+            <h1>My <span class="highlight"> Portfolio <i class="fa-solid fa-mug-hot"> </i></span></h1>
+            <h2> Hi, I'm <span class="highlight">John Nilo A. Diaz</span> </h2>
+        </div>
+        </div>
+    </div>
+    <!-- ---------about--------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="p0.jpg" alt="p0">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+
+                    <div class="tab-container">
+                        <a class="tab-link active" onclick="openTab(event, 'tab1')"><h3>Education</h3></a>
+                        <a class="tab-link" onclick="openTab(event, 'tab2')"> <h3>Skills</h3></a>
+                    </div>
+                    <div id="tab1" class="tab-content active">
+                        <h1> University of Pangasinan </h1>
+                        <p> Bachelor of Science in Information Technology </p>
+                    </div>
+                    <div id="tab2" class="tab-content">
+                        <h2> Programing </h2>
+                        <br/>
+                        <p> Html, Css</p>
+                        <br/>
+                        <h2> Sketching </h2>
+                        <br/>
+                        <p>Pencil Skill Type</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="grid-container">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Programing</h2>
+                    <p>HTML, CSS</p>
+                    <a href="https://www.youtube.com/@johndiaz8631/featured">Learn More</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-pencil"></i>
+                    <h2>Sketching</h2>
+                    <p>Hand Skill Learnings</p>
+                    <a href="https://www.youtube.com/@johndiaz8631/featured">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="strength">
+        <div class="container">
+            <h1 class="sub-title">My Strength</h1>
+            <div class="work-list">
+                <div class="image-container">
+                    <img src="img-2.jpg">
+                    <div class="overlay">
+                        <h1>Coding<br><p style="font-size: small;"> HTML,CSS </p> </h1>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="img-3.jpg">
+                    <div class="overlay">
+                        <h1>Sketching<br><p style="font-size: small;"> Pencil Type Skills </p> </h1>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/@johndiaz8631/featured" class="btn">See more</a>
+        </div>
+    </div>
+    
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <P><i class="fa-solid fa-paper-plane"></i>johnnilodiaz@gmail.com</P>
+                    <p><i class="fa-solid fa-phone"></i>09926478972</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100072649640233/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.tiktok.com/@shin.choi?lang=en"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://twitter.com/Niljohn_"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/diazjohnnilo/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="MY_CV.PDF.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right"></div>
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn3">Submit</button>
+                </form>
+            </div>
+        </div>
+    <div class="copyright"> 
+        <p>Copyright © Nilo.<i class="fa-solid fa-spider"></i> Portfolio</p>
+    </div>
+    </div>
+
+    <script src="java.js"></script>
+    <script>
+
+
+
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzuWyBnlFegHZWhfV8k9T1lAvfrDZSzKrvVoM4mfHSTsQVKtZx2EBbJ1SMwxHk1BSm8Xg/exec'
+        const form = document.forms['submit-to-google-sheet']
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
